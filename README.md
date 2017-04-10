@@ -2,13 +2,16 @@
 react-todo-app
 
 
-## Library
-
-* React
-* create-react-app
-
-
-## 작업 현황
+## list
 * 2017-04-10 
     * inititializing Project
+        * git init
+        * yarn install
+        * create-react-app install
+
+### 참고
+[vlpt-playground/react-todo-list](https://github.com/vlpt-playground/react-todo-list)
+
+
+
     
