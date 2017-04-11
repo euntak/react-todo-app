@@ -9,9 +9,12 @@ react-todo-app
         * yarn install
         * create-react-app install
 
+* 2017-04-11
+    * scss 적용
+
 ## next
 
-* materializecss
+* 반응형 스타일 적용 하기
 * redux 
 * back-end (koa)
     * why koa ? generator use and es6 use
