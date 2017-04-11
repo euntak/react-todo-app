@@ -2,20 +2,31 @@ import React, { Component } from 'react';
 
 class TodoInsert extends Component {
     state = {
-        input: ''
+        input: '',
+        focus: true
     }
 
     handleChange = (e) => {
         this.setState({
-           input: e.target.value 
+           input: e.target.value,
         });
     }
 
-    handleClick = () => {
-        this.props.onInsert(this.state.input);
-        this.setState({
-            input: ''
-        });
+    handleClick = (e) => {
+        if(this.state.input !== '') {
+            this.props.onInsert(this.state.input);
+            this.setState({
+                input: '',
+                focus: false
+            });
+        } else {
+            alert("Input Text is Empty !");
+            this.setState({
+                focus: true
+            });
+        }
+
+        
     }
 
     handleKeyPress = (e) => {
@@ -27,9 +38,10 @@ class TodoInsert extends Component {
         const { handleChange, handleClick, handleKeyPress } = this;
 
         return (
-            <div className="TodoInsert">
-                <input value={input} onChange={handleChange} onKeyPress={handleKeyPress}/>
-                <button onClick={handleClick}>add</button>
+            <div className="TodoInsert input-todo">
+                <input ref={input => input && input.focus()} 
+                value={input} onChange={handleChange} onKeyPress={handleKeyPress}/>
+                <button className="add" onClick={handleClick}>Add</button>
             </div>
         );
     }

@@ -11,7 +11,8 @@ class TodoItem extends Component {
 
         const style = {
             cursor: 'pointer',
-            textDecoration: finished ? 'line-through' : 'none'
+            textDecoration: finished ? 'line-through' : 'none',
+            padding: '0.3rem'
         };
 
         // console.log(name);

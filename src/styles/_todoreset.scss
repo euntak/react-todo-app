@@ -1,0 +1,22 @@
+@import '~open-color/open-color';
+
+.reset {
+    width: 30%;
+    border: 2px solid $oc-orange-8;
+    color: $oc-orange-8;
+    font-size: 18px;
+
+    padding: 0.55rem;
+    margin-bottom: 1.2rem;
+    background-color: white;
+    border-radius: 0.65em;
+    -webkit-transition-duration: 0.5s; /* Safari */
+    transition-duration: 0.5s;
+    cursor: pointer;
+
+    &:hover {
+        color: $oc-gray-0;
+        background-color: $oc-orange-7;
+        border: 2px solid $oc-gray-3;
+    }
+}

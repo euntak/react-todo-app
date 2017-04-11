@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TodoItem from './TodoItem';
+import '../styles/_todoitemlist.scss';
 
 class TodoItemList extends Component {
     render() {
@@ -17,7 +18,7 @@ class TodoItemList extends Component {
             )
         )
         return (
-            <ul className="TodoItemList">
+            <ul className="list">
                 {itemList}
             </ul>
         );

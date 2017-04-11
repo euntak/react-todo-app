@@ -1,0 +1,14 @@
+.root {
+    font-family: 'Press Start 2P', cursive;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $oc-gray-3;
+
+    .title {
+        font-size: 50px;
+    }
+}

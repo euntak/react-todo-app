@@ -102,8 +102,8 @@ class App extends Component {
 
 
     return (
-      <div>
-          <h2>Hello Todo.</h2>
+      <div className="root">
+          <h2 className="title">Hello Todo</h2>
           <TodoReset onClick={handleReset}>Reset</TodoReset>
           <TodoInsert onInsert={handleInsert}>Insert</TodoInsert>
           <TodoItemList items={todoItems} onToggle={handleToggle} onRemove={handleRemove}/>
