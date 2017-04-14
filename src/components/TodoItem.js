@@ -1,28 +1,46 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 
-class TodoItem extends Component {
+import React from 'react';
+
+const TodoItem = ({ ...todo, onToggle, onRemove }) => {
+
+    const style = {
+        cursor: 'pointer',
+        textDecoration: todo.completed ? 'line-through' : 'none',
+        color: todo.deleted ? 'red' : 'black',
+        padding: '0.3rem'
+    };
+
+    return (
+        <li className="TodoItem" style={style} onClick={onToggle} onDoubleClick={onRemove}>
+                {todo.text}
+        </li>
+    );
+};
+
+export default TodoItem;
+/*
+class  extends Component {
 
     shouldComponentUpdate(nextProps, nextState) {
-        return nextProps.finished !== this.props.finished;
+        return nextProps.completed !== this.props.completed;
     }
 
     render() {
-        const { name, finished, id, onToggle, onRemove } = this.props;
+        const { text, completed, deleted, id, onToggle, onRemove } = this.props;
 
         const style = {
             cursor: 'pointer',
-            textDecoration: finished ? 'line-through' : 'none',
+            textDecoration: completed ? 'line-through' : 'none',
+            color: deleted ? 'red' : 'black',
             padding: '0.3rem'
         };
 
-        // console.log(name);
-
         return (
-            <li className="TodoItem" style={style} onClick={()=>{onToggle(id)}} onDoubleClick={()=> onRemove(id)}>
-                {name}
+            <li className="TodoItem" style={style}>
+                {text}
             </li>
         );
     }
 }
-
-export default TodoItem;
+export default TodoItem;*/
