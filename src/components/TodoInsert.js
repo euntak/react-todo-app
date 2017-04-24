@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { add } from '../redux/actions';
 
@@ -31,65 +31,4 @@ const TodoInsert = ({ dispatch }) => {
     );
 };
 
-
-// const mapDispatchToProps = (dispatch, ownProps) => {
-//     return {
-//         add: (text) => dispatch(add(this.state.input.value))
-//     }
-// }
-
-// TodoInsert = connect(undefined, mapDispatchToProps)(TodoInsert);
-TodoInsert = connect()(TodoInsert);
-
-export default TodoInsert;
-
-/*class TodoInsert extends Component {
-    state = {
-        input: '',
-        focus: true
-    }
-
-    handleChange = (e) => {
-        this.setState({
-           input: e.target.value,
-        });
-    }
-
-    // handleClick = (e) => {
-    //     if(this.state.input !== '') {
-    //         this.props.onInsert(this.state.input);
-    //         this.setState({
-    //             input: '',
-    //             focus: false
-    //         });
-    //     } else {
-    //         alert("Input Text is Empty !");
-    //         this.setState({
-    //             focus: true
-    //         });
-    //     }
-
-        
-    // }
-
-    handleKeyPress = (e) => {
-        if(e.key === 'Enter') this.handleClick();
-    }
-
-    render() {
-        const { input } = this.state;
-        const { handleChange, addTodo, handleKeyPress } = this;
-
-        return (
-            <div className="TodoInsert input-todo">
-                <input ref={input => input && input.focus()} 
-                value={input} onChange={handleChange} onKeyPress={handleKeyPress}/>
-                <button className="add" onClick={addTodo}>Add</button>
-            </div>
-        );
-    }
-}
-
-
-
-export default TodoInsert;*/
+export default connect()(TodoInsert);

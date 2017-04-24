@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { reset } from '../redux/actions';
+import * as actions from '../redux/actions';
 
 const TodoReset = ({ toReset }) => {
     return (
@@ -12,10 +12,8 @@ const TodoReset = ({ toReset }) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        toReset: () => dispatch(reset())
+        toReset: () => dispatch(actions.reset())
     }
 }
 
-TodoReset = connect(undefined, mapDispatchToProps)(TodoReset);
-
-export default TodoReset;
+export default connect(undefined, mapDispatchToProps)(TodoReset);
