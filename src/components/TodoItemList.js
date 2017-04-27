@@ -10,6 +10,7 @@ const TodoItemList = ({ todos, onToggle, onRemove }) => {
         todo => (
             <TodoItem
                 {...todo}
+                key={todo.id}
                 onToggle={() => onToggle(todo.id)}
                 onRemove={() => onRemove(todo.id)}
             />

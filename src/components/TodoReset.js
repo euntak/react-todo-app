@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect, dispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import * as actions from '../redux/actions';
 
 const TodoReset = ({ dispatch }) => {

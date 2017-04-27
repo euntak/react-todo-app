@@ -1,26 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TodoItem = ({ todo, onToggle, onRemove }) => {
+const TodoItem = ({ text, deleted, completed, onToggle, onRemove }) => {
 
     const style = {
         cursor: 'pointer',
-        textDecoration: todo.completed ? 'line-through' : 'none',
-        color: todo.deleted ? 'red' : 'black',
+        textDecoration: completed ? 'line-through' : 'none',
+        color: deleted ? 'red' : 'black',
         padding: '0.3rem'
     };
 
     return (
         <li className="TodoItem" style={style} onClick={onToggle} onDoubleClick={onRemove}>
-                {todo.text}
+                {text}
         </li>
     );
 };
 
 TodoItem.propTypes = {
-    onClick: PropTypes.func.isRequired,
+    onRemove: PropTypes.func.isRequired,
     onToggle: PropTypes.func.isRequired,
-    todo: PropTypes.object.isRequired
+    text: PropTypes.string.isRequired,
+    deleted: PropTypes.bool.isRequired,
+    completed: PropTypes.bool.isRequired
 }
 
 export default TodoItem;
