@@ -1,8 +1,8 @@
 # react-todo-app
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e65b322a01c446218921d14dc43d9536)](https://www.codacy.com/app/euntak/react-todo-app?utm_source=github.com&utm_medium=referral&utm_content=euntak/react-todo-app&utm_campaign=badger)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e65b322a01c446218921d14dc43d9536)](https://www.codacy.com/app/euntak/react-todo-app?utm_source=github.com&utm_medium=referral&utm_content=euntak/react-todo-app&utm_campaign=badger) [![codecov](https://codecov.io/gh/euntak/react-todo-app/branch/master/graph/badge.svg)](https://codecov.io/gh/euntak/react-todo-app)
 
-[![codecov](https://codecov.io/gh/euntak/react-todo-app/branch/master/graph/badge.svg)](https://codecov.io/gh/euntak/react-todo-app)
+
 
 my first react application by create-react-app
 
