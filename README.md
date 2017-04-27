@@ -11,6 +11,7 @@ my first react application by create-react-app
 ```zsh
 
 git clone http://github.com/euntak/react-todo-app
+
 cd [react-todo-app] directory
 
 yarn install
