@@ -1,5 +1,5 @@
 import * as actions from '../src/redux/actions';
-
+// var actions = require('../src/redux/actions/index.js');
 
 describe('todo actions', () => {
     it('should ADD action create todo', () => {

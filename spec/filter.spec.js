@@ -1,4 +1,5 @@
 import filter from '../src/redux/reducers/filter';
+// var filter = require('../src/redux/reducers/filter');
 
 describe('filter reducer', () => {
    
