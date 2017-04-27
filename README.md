@@ -11,6 +11,10 @@ my first react application by create-react-app
 * redux
 * scss
 
+* travis
+* codacy
+* codecov
+
 ### USE
 
 ```zsh
