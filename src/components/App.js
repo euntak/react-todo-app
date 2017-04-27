@@ -1,9 +1,10 @@
 import React from 'react';
 
 // component import
-import TodoItemList from './TodoItemList';
+import VisibleTodoList from '../containers/VisibleTodoList';
 import TodoInsert from './TodoInsert';
 import TodoReset from './TodoReset';
+import Footer from './Footer';
 
 const App = () => {
   return (
@@ -11,7 +12,8 @@ const App = () => {
         <h2 className="title">Hello Todo</h2>
         <TodoReset>Reset</TodoReset>
         <TodoInsert >Insert</TodoInsert>
-        <TodoItemList />
+        <VisibleTodoList />
+        <Footer />
     </div>
   );
 };

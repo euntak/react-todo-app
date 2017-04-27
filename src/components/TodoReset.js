@@ -1,19 +1,13 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { connect, dispatch } from 'react-redux';
 import * as actions from '../redux/actions';
 
-const TodoReset = ({ toReset }) => {
+const TodoReset = ({ dispatch }) => {
     return (
-        <button className="TodoReset reset" onClick={toReset}>
+        <button className="TodoReset reset" onClick={() => dispatch(actions.reset())}>
             RE:SET
         </button>
     );
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        toReset: () => dispatch(actions.reset())
-    }
-}
-
-export default connect(undefined, mapDispatchToProps)(TodoReset);
+export default connect()(TodoReset);

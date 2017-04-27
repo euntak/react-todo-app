@@ -16,4 +16,17 @@ describe('todo actions', () => {
             id:0
         });
     });
+
+    it('shuold REMOVE action remove todo item', () => {
+        expect(actions.remove(0)).toEqual({
+            type: 'REMOVE',
+            id:0
+        });
+    });
+
+    it('shuold RESET action reset todo list', () => {
+        expect(actions.reset()).toEqual({
+            type: 'RESET'
+        });
+    });
 });

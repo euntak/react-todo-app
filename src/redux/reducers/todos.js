@@ -1,12 +1,4 @@
-import { ADD, TOGGLE, RESET } from '../actions';
-
-// const initState = [
-//     {
-//         text : 'Hello Todo',
-//         id : 0,
-//         completed : false
-//     }
-// ];
+import { ADD, TOGGLE, RESET, REMOVE } from '../actions';
 
 const todos = (state = [], action) => {
 
@@ -16,6 +8,7 @@ const todos = (state = [], action) => {
                 {
                     id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
                     completed: false,
+                    deleted: false,
                     text: action.text
                 },
                 ...state
@@ -30,6 +23,14 @@ const todos = (state = [], action) => {
             });
         case RESET:
             return []
+        case REMOVE:
+            return state.map((todo) => {
+                if(todo.id !== action.id) return todo
+                return {
+                    ...todo,
+                    deleted : !todo.deleted
+                }
+            });
         default:
             return state;
     }

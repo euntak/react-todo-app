@@ -14,6 +14,7 @@ describe('todos reducer', () => {
             {
                 id: 0,
                 text: 'Run the tests',
+                deleted: false,
                 completed: false
             }
         ])
@@ -21,6 +22,7 @@ describe('todos reducer', () => {
         expect(todos([
             {
                 text: 'Run the tests',
+                deleted: false,
                 completed: false,
                 id: 0
             }
@@ -31,10 +33,12 @@ describe('todos reducer', () => {
         })).toEqual([
             {
                 text: 'Use Redux',
+                deleted: false,
                 completed: false,
                 id: 1
             }, {
                 text: 'Run the tests',
+                deleted: false,
                 completed: false,
                 id: 0
             }
@@ -43,10 +47,12 @@ describe('todos reducer', () => {
         expect(todos([
             {
                 text: 'Use Redux',
+                deleted: false,
                 completed: false,
                 id: 1
             }, {
                 text: 'Run the tests',
+                deleted: false,
                 completed: false,
                 id: 0
             }
@@ -57,14 +63,17 @@ describe('todos reducer', () => {
         })).toEqual([
             {
                 text: 'Fix the tests',
+                deleted: false,
                 completed: false,
                 id: 2
             }, {
                 text: 'Use Redux',
+                deleted: false,
                 completed: false,
                 id: 1
             }, {
                 text: 'Run the tests',
+                deleted: false,
                 completed: false,
                 id: 0
             }
@@ -75,14 +84,17 @@ describe('todos reducer', () => {
         expect(todos([
             {
                 text: 'Fix the tests',
+                deleted: false,
                 completed: false,
                 id: 2
             }, {
                 text: 'Use Redux',
+                deleted: false,
                 completed: false,
                 id: 1
             }, {
                 text: 'Run the tests',
+                deleted: false,
                 completed: false,
                 id: 0
             }
@@ -93,14 +105,17 @@ describe('todos reducer', () => {
             {
                 text: 'Fix the tests',
                 completed: true,
+                deleted: false,
                 id: 2
             }, {
                 text: 'Use Redux',
                 completed: false,
+                deleted: false,
                 id: 1
             }, {
                 text: 'Run the tests',
                 completed: false,
+                deleted: false,
                 id: 0
             }
         ])
@@ -111,10 +126,40 @@ describe('todos reducer', () => {
             {
                 text: 'Run the tests',
                 completed: false,
+                deleted: false,
                 id: 0
             }
-        ], {
-            type: 'RESET'
-        })).toEqual([])
+        ], {type: 'RESET'})).toEqual([])
     });
+
+    it('should handle REMOVE', () => {
+        expect(todos([
+            {
+                text: 'Run the tests',
+                completed: false,
+                deleted: false,
+                id: 0
+            }, {
+                text: 'Remove todo tests',
+                completed: false,
+                deleted: false,
+                id: 1
+            }
+        ], {
+            type: 'REMOVE',
+            id: 1
+        })).toEqual([
+            {
+                text: 'Run the tests',
+                completed: false,
+                deleted: false,
+                id: 0
+            }, {
+                text: 'Remove todo tests',
+                completed: false,
+                deleted: true,
+                id: 1
+            }
+        ]);
+    })
 });
