@@ -5,6 +5,7 @@
   "dependencies": {
     "blanket": "^1.2.3",
     "codacy-coverage": "^2.0.2",
+    "codecov": "^2.1.0",
     "global": "^4.3.2",
     "istanbul": "^0.4.5",
     "lodash": "^4.17.4",
@@ -66,8 +67,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom",
-    "codecov": "jscoverage lib && YOURPACKAGE_COVERAGE=1 nodeunit --reporter=lcov test && codecov"
+    "test": "yarn jest",
+    "codecov": "yarn jest && codecov -t edcc3fd2-fd69-4c9e-a45c-f2875337823e"
   },
   "jest": {
     "coverageDirectory": "./coverage/",

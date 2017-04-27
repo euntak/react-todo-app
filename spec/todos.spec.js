@@ -1,6 +1,4 @@
 import todos from '../src/redux/reducers/todos'
-// var todos = require('../src/redux/reducers/todos');
-
 
 describe('todos reducer', () => {
     it('should handle initial state', () => {

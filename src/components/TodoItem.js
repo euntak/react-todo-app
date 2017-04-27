@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TodoItem = ({ ...todo, onToggle, onRemove }) => {
+const TodoItem = ({ todo, onToggle, onRemove }) => {
 
     const style = {
         cursor: 'pointer',

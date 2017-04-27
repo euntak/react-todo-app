@@ -1,20 +1,38 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { shallow } from 'enzyme';
 
-// jest.dontMock('./App');
+import VisibleTodoList from '../../containers/VisibleTodoList';
+import TodoInsert from '../TodoInsert';
+import TodoReset from '../TodoReset';
+import Footer from '../Footer';
 
 import App from '../App';
 
 
-describe('A suite for App component', () => {
-   /*it('contains spec with an expectation' , () => {
-        expect(shallow(<App />).containes(
-        <div className="root">
-        </div>
-    )).toBe(true);
-   });*/
+describe('A suite for <App /> component', () => {
+  let wrapper;
 
-   it('should be selectable by class "root"', function() {
-    expect(shallow(<App />).is('.root')).toBe(true);
+  beforeEach(() => {
+    wrapper = shallow(<App />);
+  });
+
+  it('should render <VisibleTodoList /> components', () => {
+    expect(wrapper.find(VisibleTodoList).length).toBe(1);
+  });
+
+  it('should render <TodoInsert /> components', () => {
+    expect(wrapper.find(TodoInsert).length).toBe(1);
+  });
+
+  it('should render <TodoReset /> components', () => {
+    expect(wrapper.find(TodoReset).length).toBe(1);
+  });
+
+  it('should render <Footer /> components', () => {
+    expect(wrapper.find(Footer).length).toBe(1);
+  });
+
+  it('should render an ClassName `.root`', () => {
+    expect(wrapper.find('.root').length).toBe(1);
   });
 });
