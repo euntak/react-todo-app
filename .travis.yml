@@ -11,3 +11,9 @@ before_script:
 
 script: 
   - yarn test
+  - yarn codecov
+  - yarn build
+
+after_script:
+  - yarn predeploy
+  - yarn deploy
