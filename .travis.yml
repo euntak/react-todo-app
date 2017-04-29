@@ -24,5 +24,5 @@ after_success:
   - npm run build
   - gh-pages -d build
   - echo "github-pages building...success!!"
-  - firebase deploy --token $FIREBASE_TOKKEN
+  - firebase deploy --token $FIREBASE_TOKEN
   - echo "firebase Success!"
