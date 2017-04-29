@@ -23,9 +23,9 @@ after_success:
   - echo "Deploying..."
 
 before_deploy:
-  - yarn run build
+  - npm run build
+  - yarn run deploy
   - echo "github-pages building..."
-  - gh-pages -d build
 
 deploy:
   - firebase deploy --token $FIREBASE_TOKKEN
