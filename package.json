@@ -2,7 +2,6 @@
   "name": "react-todo-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://euntak.github.io/react-todo-app",
   "dependencies": {
     "blanket": "^1.2.3",
     "codacy-coverage": "^2.0.2",
@@ -46,7 +45,6 @@
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.10.0",
     "fs-extra": "0.30.0",
-    "gh-pages": "^0.12.0",
     "html-webpack-plugin": "2.24.0",
     "http-proxy-middleware": "0.17.3",
     "jest": "18.1.0",
@@ -67,9 +65,6 @@
     "whatwg-fetch": "2.0.2"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "gp-deploy": "gh-pages -d build",
-    "fb-deploy": "firebase deploy",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "yarn jest",

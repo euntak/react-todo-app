@@ -6,14 +6,19 @@ cache:
   yarn: true
 
 before_script:
+  - echo "Initializing prevent installing"
   - npm install -g yarn
   - yarn install
 
 script: 
-  - yarn test
+  - echo "Testing...!"
   - yarn codecov
-  - yarn build
 
-after_script:
-  - yarn predeploy
-  - yarn deploy
+install:
+  - echo "Installing firebase-tools..."
+  - yarn add global firebase-tools
+  - echo "Installing success!"
+after_success:
+  - echo "Deploying..."
+  - firebase deploy --token $FIREBASE_TOKKEN
+  - echo "CI Success!"
