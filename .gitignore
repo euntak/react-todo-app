@@ -18,7 +18,7 @@ yarn-debug.log*
 yarn-error.log*
 
 -# firebase
--/functions
--database.rules.json
--firebase.json
--.firebaserc 
+/functions
+database.rules.json
+firebase.json
+.firebaserc 
