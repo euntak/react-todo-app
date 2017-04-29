@@ -24,7 +24,7 @@ after_success:
 
 before_deploy:
   - npm run build
-  - yarn run deploy
+  - gh-pages -d build
   - echo "github-pages building..."
 
 deploy:
