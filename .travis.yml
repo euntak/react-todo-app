@@ -2,13 +2,13 @@ language: node_js
 node_js:
   - "node"
   - "7"
-cache:
-  yarn: true
 
-before_script:
-  - echo "Initializing prevent installing"
+before_install:
   - npm install -g yarn
   - yarn install
+
+cache:
+  yarn: true
 
 script: 
   - echo "Testing...!"
@@ -16,9 +16,17 @@ script:
 
 install:
   - echo "Installing firebase-tools..."
-  - yarn add global firebase-tools
+  - yarn add global firebase-tools gh-pages
   - echo "Installing success!"
+
 after_success:
   - echo "Deploying..."
+
+before_deploy:
+  - yarn run build
+  - echo "github-pages building..."
+  - gh-pages -d build
+
+deploy:
   - firebase deploy --token $FIREBASE_TOKKEN
   - echo "CI Success!"

@@ -1,5 +1,6 @@
 'use strict';
 
+var path = require('path');
 var autoprefixer = require('autoprefixer');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -54,6 +55,9 @@ module.exports = {
   // In production, we only want to load the polyfills and the app code.
   entry: [
     require.resolve('./polyfills'),
+    paths.appIndexJs,
+    path.resolve('./src/styles/_all.scss'),
+    path.join(paths.appSrc, 'index'),
     paths.appIndexJs
   ],
   output: {
@@ -110,6 +114,7 @@ module.exports = {
           /\.html$/,
           /\.(js|jsx)$/,
           /\.css$/,
+          /\.scss$/,
           /\.json$/,
           /\.svg$/
         ],
@@ -146,6 +151,11 @@ module.exports = {
           extractTextPluginOptions
         )
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
+      },
+      {
+        test: /\.scss$/,
+        include: [paths.appSrc, paths.appNodeModules],
+        loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!sass')
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.
