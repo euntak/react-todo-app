@@ -21,12 +21,8 @@ install:
 
 after_success:
   - echo "Deploying..."
-
-before_deploy:
   - npm run build
   - gh-pages -d build
-  - echo "github-pages building..."
-
-deploy:
+  - echo "github-pages building...success!!"
   - firebase deploy --token $FIREBASE_TOKKEN
-  - echo "CI Success!"
+  - echo "firebase Success!"
