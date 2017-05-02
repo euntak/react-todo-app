@@ -55,7 +55,6 @@ module.exports = {
   // In production, we only want to load the polyfills and the app code.
   entry: [
     require.resolve('./polyfills'),
-    paths.appIndexJs,
     path.resolve('./src/styles/_all.scss'),
     path.join(paths.appSrc, 'index'),
     paths.appIndexJs

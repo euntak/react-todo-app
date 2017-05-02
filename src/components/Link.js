@@ -1,14 +1,26 @@
 import React from 'react';
+import oc from 'open-color';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+const Selector = styled.a`
+    // text-decoration: none;
+    cursor: pointer;
+    color: ${props => props.active ? oc.violet[7] : oc.grape[4]};
+
+    &:hover {
+        color: ${oc.grape[9]};
+    }
+`;
+
 const Link = ({ active, children, onClick }) => {
-    if(active) return <span>{children}</span>
+    // if(active) return <span>{children}</span>
 
     return (
         <span>
-            <a href="#" onClick={e => {e.preventDefault(); onClick()}}>
+            <Selector href="#" onClick={e => {e.preventDefault(); onClick()}}>
                 {children}
-            </a>
+            </Selector>
         </span>
     );
 };
