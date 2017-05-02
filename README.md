@@ -47,6 +47,6 @@ yarn test
 
 ### TODO
 
-* styling by component-style
+* styled-components
 * add transitions 
 * remove item reducer
