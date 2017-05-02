@@ -43,3 +43,10 @@ yarn test
 ### LINK 
 * [vlpt-playground/react-todo-list](https://github.com/vlpt-playground/react-todo-list)
 * [redux example todolist](https://github.com/reactjs/redux/tree/master/examples)
+
+
+### TODO
+
+* styling by component-style
+* add transitions 
+* remove item reducer
