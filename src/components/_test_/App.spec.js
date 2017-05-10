@@ -32,7 +32,4 @@ describe('A suite for <App /> component', () => {
     expect(wrapper.find(Footer).length).toBe(1);
   });
 
-  it('should render an ClassName `.root`', () => {
-    expect(wrapper.find('.root').length).toBe(1);
-  });
 });
